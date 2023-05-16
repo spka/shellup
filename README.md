@@ -4,6 +4,7 @@ _Small zsh script to trigger (fzf) history._
 ### Usecase
 
 I like the default shell history ux, but after 5 or so commands i lose track. Time to press `ctrl + R`, but im lazy...
+![Screen Recording 2023-05-16 at 21 23 15](https://github.com/spka/shellup/assets/13484241/0f3e7c2f-e64c-4bcd-a156-27acab75edb6)
 
 ### Requires fzf
 
