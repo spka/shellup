@@ -1,4 +1,3 @@
-# Shellback
 if ! type "fzf" > /dev/null; then
   echo 'fzf not found, shellback will not work!'
 fi
@@ -21,7 +20,6 @@ fzf-history-widget2() {
 }
 
 function history-up {
-  #if [[ ${history:4:1} == $LBUFFER ]]; then
   if [[ ${hcounter} == 4 ]]; then
     zle backward-kill-line
     zle end-of-history
