@@ -1,5 +1,5 @@
 if ! type "fzf" > /dev/null; then
-  echo 'fzf not found, shellback will not work!'
+  echo 'fzf not found, shellup will not work! :('
 fi
 
 hcounter=0
