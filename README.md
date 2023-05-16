@@ -1,15 +1,15 @@
 # Shellup 🐚☝️
 _Small zsh script to trigger (fzf) history._
 
-## Usecase
+### Usecase
 
 I like the default shell history ux, but after 5 or so commands i lose track. Time to press `ctrl + R`, but im lazy...
 
-## Requires fzf
+### Requires fzf
 
 [fzf - a general-purpose command-line fuzzy finder](https://github.com/junegunn/fzf)
 
-## Install Zsh
+### Install Zsh
 
 1. Clone this repository somewhere on your machine. This guide will assume `~/.zsh/shellup`.
 
