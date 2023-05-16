@@ -14,7 +14,7 @@ I like the default shell history ux, but after 5 or so commands i lose track. Ti
 1. Clone this repository somewhere on your machine. This guide will assume `~/.zsh/shellup`.
 
     ```sh
-    git clone https://github.com/zsh-users/shellup ~/.zsh/shellup
+    git clone https://github.com/spka/shellup ~/.zsh/shellup
     ```
 
 2. Add the following to your `.zshrc`:
