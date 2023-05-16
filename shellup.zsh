@@ -51,5 +51,3 @@ zle -N history-reset
 bindkey '^[[A' history-up
 bindkey '^[[B' history-down
 bindkey '^M' history-reset
-
-#PS1+='$(_current_user) '
