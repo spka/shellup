@@ -7,7 +7,8 @@ hcounter=0
 fzf-history-widget2() {
   local selected num
   setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
-  selected=( $(fc -rl 1 | awk '{ cmd=$0; sub(/^[ \t]*[0-9]+\**[ \t]+/, "", cmd); print $0 }' | fzf --height=40%) )
+  selected=( $(fc -rln 0 | nl | awk '{ cmd=$0; sub(/^[ \t]*[0-9]+\**[ \t]+/, "", cmd); print $0 }' | fzf --height=40% --border=sharp) )
+  # selected=( $(fc -rln 0 | nl | fzf --height=40% --border=sharp | awk '{print $2}') )
   local ret=$?
   if [ -n "$selected" ]; then
     num=$selected[1]
