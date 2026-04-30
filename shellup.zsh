@@ -2,12 +2,13 @@ if ! type "fzf" > /dev/null; then
   echo 'fzf not found, shellup will not work! :('
 fi
 
-hcounter=0
+SHELLUP_THRESHOLD=${SHELLUP_THRESHOLD:-4}
+_shellup_hcounter=0
 
 fzf-history-widget2() {
   local selected num
   setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
-  selected=( $(fc -rl 1 | awk '{ cmd=$0; sub(/^[ \t]*[0-9]+\**[ \t]+/, "", cmd); print $0 }' | fzf --height=40%) )
+  selected=( $(fc -rl 1 | fzf --height=40%) )
   local ret=$?
   if [ -n "$selected" ]; then
     num=$selected[1]
@@ -20,26 +21,24 @@ fzf-history-widget2() {
 }
 
 function history-up {
-  if [[ ${hcounter} == 4 ]]; then
+  if [[ ${_shellup_hcounter} == $SHELLUP_THRESHOLD ]]; then
     zle backward-kill-line
     zle end-of-history
-    ((hcounter=0))
+    ((_shellup_hcounter=0))
     zle fzf-history-widget2
   else
-    ((hcounter++))
+    ((_shellup_hcounter++))
     zle up-line-or-search
   fi
 }
 
 function history-down {
-  if [[ ${hcounter} > 0 ]]; then
-    ((hcounter--))
-  fi
+  [[ $_shellup_hcounter -gt 0 ]] && ((_shellup_hcounter--))
   zle down-line-or-search
 }
 
-function history-reset { 
-  ((hcounter=0))
+function history-reset {
+  ((_shellup_hcounter=0))
   zle accept-line
 }
 
