@@ -19,7 +19,7 @@ _shellup_history_up() {
         _shellup_hcounter=0
         _shellup_histindex=0
         local selected
-        selected=$(fc -ln 1 | awk '!seen[$0]++' | fzf --height=40%)
+        selected=$(fc -ln 1 | awk '!seen[$0]++' | fzf --height=40% --bind 'down:transform:[ $FZF_POS -eq 1 ] && echo abort || echo down')
         if [[ -n "$selected" ]]; then
             selected="${selected#"${selected%%[![:space:]]*}"}"
             READLINE_LINE="$selected"
