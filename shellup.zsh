@@ -23,7 +23,7 @@ fi
 shellup-fzf-history() {
   local selected num
   setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2> /dev/null
-  selected=( $(fc -rl 1 | fzf --height=40%) )
+  selected=( $(fc -rl 1 | fzf --height=40% --bind 'down:transform:[ $FZF_POS -eq 1 ] && echo abort || echo down') )
   local ret=$?
   if [ -n "$selected" ]; then
     num=$selected[1]
