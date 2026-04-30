@@ -19,18 +19,18 @@ Time to press `ctrl + R`, but im lazy...
     git clone https://github.com/spka/shellup ~/.zsh/shellup
     ```
 
-3. Add the following to your `.zshrc`:
+2. Add the following to your `.zshrc`:
 
     ```sh
     source ~/.zsh/shellup/shellup.zsh
     ```
 
-2.1 Add this to `.bashrc`:
-
-    ```
+3. Or add this to `.bashrc`:
+   
+    ```sh
     echo '[ -f ~/bashup.sh ] && source ~/bashup.sh' >> ~/.bashrc
     ```
-3. Start a new terminal session.
+5. Start a new terminal session.
 
 ## Install
 
