@@ -3,16 +3,17 @@ set -euo pipefail
 
 REPO="spka/shellup"
 REF="${SHELLUP_REF:-main}"
-DEST="$HOME/.shellup.sh"
 
 shell="$(basename "${SHELL:-}")"
 case "$shell" in
     bash)
         src_file="bashup.sh"
+        dest_name=".shellup.sh"
         rc="$HOME/.bashrc"
         ;;
     zsh)
         src_file="shellup.zsh"
+        dest_name=".shellup.zsh"
         rc="${ZDOTDIR:-$HOME}/.zshrc"
         ;;
     *)
@@ -20,6 +21,8 @@ case "$shell" in
         exit 1
         ;;
 esac
+
+DEST="$HOME/$dest_name"
 
 url="https://raw.githubusercontent.com/${REPO}/${REF}/${src_file}"
 
@@ -38,7 +41,7 @@ else
     exit 1
 fi
 
-line='[ -f ~/.shellup.sh ] && source ~/.shellup.sh'
+line="[ -f ~/$dest_name ] && source ~/$dest_name"
 if grep -qsF "$line" "$rc"; then
     echo "Already sourced in $rc"
 else
