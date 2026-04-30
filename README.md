@@ -34,6 +34,12 @@ Time to press `ctrl + R`, but im lazy...
 
 ## Install
 
+  With curl:
   ```bash
   curl -fsSL https://raw.githubusercontent.com/spka/shellup/main/install.sh | bash
+  ```
+  With wget:
+
+  ```bash
+  wget -qO- https://raw.githubusercontent.com/spka/shellup/main/install.sh | bash
   ```
