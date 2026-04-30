@@ -13,24 +13,28 @@ Time to press `ctrl + R`, but im lazy...
 [fzf - a general-purpose command-line fuzzy finder](https://github.com/junegunn/fzf)
 
 ### Install manually
-1. Clone this repository somewhere on your machine. This guide will assume `~/.zsh/shellup`.
 
+**zsh**
+1. Download the script:
     ```sh
-    git clone https://github.com/spka/shellup ~/.zsh/shellup
+    curl -fsSL https://raw.githubusercontent.com/spka/shellup/main/shellup.zsh -o ~/.shellup.zsh
+    ```
+2. Add to your `.zshrc`:
+    ```sh
+    [ -f ~/.shellup.zsh ] && source ~/.shellup.zsh
     ```
 
-2. Add the following to your `.zshrc`:
-
+**bash**
+1. Download the script:
     ```sh
-    source ~/.zsh/shellup/shellup.zsh
+    curl -fsSL https://raw.githubusercontent.com/spka/shellup/main/bashup.sh -o ~/.shellup.sh
+    ```
+2. Add to your `.bashrc`:
+    ```sh
+    [ -f ~/.shellup.sh ] && source ~/.shellup.sh
     ```
 
-3. Or add this to `.bashrc`:
-   
-    ```sh
-    echo '[ -f ~/bashup.sh ] && source ~/bashup.sh' >> ~/.bashrc
-    ```
-5. Start a new terminal session.
+3. Start a new terminal session.
 
 ## Install
 
