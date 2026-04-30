@@ -25,4 +25,8 @@ Time to press `ctrl + R`, but im lazy...
     source ~/.zsh/shellup/shellup.zsh
     ```
 
+2.1 Add this to `.bashrc`:
+```
+echo '[ -f ~/bashup.sh ] && source ~/bashup.sh' >> ~/.bashrc
+```
 3. Start a new terminal session.
